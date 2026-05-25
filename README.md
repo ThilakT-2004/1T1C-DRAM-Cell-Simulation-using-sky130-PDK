@@ -10,13 +10,13 @@ The 1T1C DRAM cell consists of:
 - **Sense amplifier** — Cross-coupled CMOS latch (XM2–XM5, PMOS W=1.5µm, NMOS W=1µm)
 
 ```
-        WL
-        |
-BL ----[M1]---- cs
-                |
-               [Cs]
-                |
-               GND
+         WL
+         |
+BL ----[NMOS]---- cs
+                   |
+                 [Cs]
+                   |
+                  GND
 ```
 
 ---
@@ -28,7 +28,7 @@ BL ----[M1]---- cs
 
 Sweeps the `cs` node from 0 → 1.8V with `blb` free to respond. Plots the sense amplifier transfer characteristic to verify two stable states.
 
-![DC Butterfly](screenshots/1t1c_dram.png)
+![DC Butterfly](1T1C-DRAM-Cell-Simulation-using-sky130-PDK/Schematics/1t1c_dram.png)
 
 | Parameter | Value |
 |---|---|
@@ -45,7 +45,7 @@ Sweeps the `cs` node from 0 → 1.8V with `blb` free to respond. Plots the sense
 
 Basic 1T1C cell with WL fixed HIGH and BL pulsing. Verifies M1 passes BL to output (cs) with NMOS threshold drop.
 
-![Basic Tran](screenshots/1t1c.png)
+![Basic Tran](1T1C-DRAM-Cell-Simulation-using-sky130-PDK/Schematics/1t1c.png)
 
 | Parameter | Value |
 |---|---|
@@ -61,7 +61,7 @@ Basic 1T1C cell with WL fixed HIGH and BL pulsing. Verifies M1 passes BL to outp
 
 WL pulses HIGH while BL = 1.8V (write '1'). Storage capacitor charges through M1.
 
-![Write Tran](screenshots/1t1c_dramW.png)
+![Write Tran](1T1C-DRAM-Cell-Simulation-using-sky130-PDK/Schematics/1t1c_dramW.png)
 
 | Parameter | Value |
 |---|---|
@@ -80,7 +80,7 @@ WL pulses HIGH while BL = 1.8V (write '1'). Storage capacitor charges through M1
 
 BL precharged to VDD/2 (0.9V), WL asserts, cs shares charge with BL creating a small ΔV, sense amplifier detects and amplifies to full rail.
 
-![Read Tran](screenshots/1t1c_dramR.png)
+![Read Tran](1T1C-DRAM-Cell-Simulation-using-sky130-PDK/Schematics/1t1c_dramR.png)
 
 | Parameter | Value |
 |---|---|
