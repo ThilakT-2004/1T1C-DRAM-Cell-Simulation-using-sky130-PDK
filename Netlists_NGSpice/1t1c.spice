@@ -1,0 +1,25 @@
+** sch_path: /home/thilak-t/Desktop/Dram/1t1c.sch
+**.subckt 1t1c bl wl out
+*.ipin bl
+*.ipin wl
+*.opin out
+XM1 out wl bl gnd sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+C1 out gnd 0.1p
+V1 wl gnd dc 1.8
+V2 bl gnd PULSE(0 1.8 0 100p 100p 1u 2u)
+**** begin user architecture code
+
+
+.tran 100p 10u
+.control
+run
+plot wl+6 bl+4 out+2
+.endc
+.end
+
+
+.lib /home/thilak-t/Desktop/eda_tools/open_pdks/sky130/sky130A/libs.tech/combined/sky130.lib.spice tt
+**** end user architecture code
+**.ends
+.GLOBAL gnd
+.end
